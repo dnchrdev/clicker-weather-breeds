@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using _Project.Core.Scripts.Entities;
+using _Project.Core.Scripts.UseCases;
 
 namespace _Project.Features.Tabs.Scripts.UseCases
 {

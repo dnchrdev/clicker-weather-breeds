@@ -21,8 +21,15 @@ namespace _Project.Features.Weather.Scripts.InterfaceInstaller
 
         public void Initialize()
         {
-            _weatherTabState.EnterEvent.Subscribe(_ => OnTabEnter()).AddTo(_disposables);
-            _weatherTabState.ExitEvent.Subscribe(_ => OnTabExit()).AddTo(_disposables);
+            _weatherTabState.IsActive.Subscribe(active => TabReaction(active)).AddTo(_disposables);
+        }
+
+        private void TabReaction(bool isActive)
+        {
+            if(isActive) 
+                OnTabEnter();  
+            else 
+                OnTabExit();
         }
         
         private void OnTabEnter()

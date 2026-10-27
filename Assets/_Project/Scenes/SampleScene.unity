@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 49871013}
   - component: {fileID: 49871014}
   m_Layer: 0
-  m_Name: Bootstrap
+  m_Name: BootstrapInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 130844344}
   - component: {fileID: 130844346}
   - component: {fileID: 130844345}
+  - component: {fileID: 130844347}
   m_Layer: 0
   m_Name: Breeds
   m_TagString: Untagged
@@ -414,6 +415,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130844343}
   m_CullTransparentMesh: 1
+--- !u!114 &130844347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130844343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749b0880cebf40d8a8a8a55aaf82a96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Features.Breeds.Scripts.Infrastructure.BreedsView
 --- !u!1 &374322539
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +938,7 @@ GameObject:
   - component: {fileID: 622683962}
   - component: {fileID: 622683963}
   m_Layer: 0
-  m_Name: Clicker
+  m_Name: ClickerInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1525,6 +1538,7 @@ GameObject:
   - component: {fileID: 1312553172}
   - component: {fileID: 1312553174}
   - component: {fileID: 1312553173}
+  - component: {fileID: 1312553175}
   m_Layer: 0
   m_Name: Weather
   m_TagString: Untagged
@@ -1589,6 +1603,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312553171}
   m_CullTransparentMesh: 1
+--- !u!114 &1312553175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312553171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b565ea5c158d4f0eb61032ccd1873564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Features.Weather.Scripts.Infrastructure.WeatherView
+--- !u!1 &1317431534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1317431535}
+  - component: {fileID: 1317431536}
+  m_Layer: 0
+  m_Name: BreedsInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1317431535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317431534}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1774247526}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1317431536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317431534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad417ff03a74d53ac65fdd523e8470b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Features.Breeds.Scripts.Installer.BreedsInstaller
+  _breedsView: {fileID: 130844347}
 --- !u!1 &1402245204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,7 +1671,7 @@ GameObject:
   - component: {fileID: 1402245205}
   - component: {fileID: 1402245206}
   m_Layer: 0
-  m_Name: Tabs
+  m_Name: TabsInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1634,6 +1705,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TabsInstaller
   _tabsView: {fileID: 495192166}
+--- !u!1 &1714389254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1714389255}
+  - component: {fileID: 1714389256}
+  m_Layer: 0
+  m_Name: WeatherInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1714389255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714389254}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1774247526}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714389256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714389254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62395c0f3f7b4f1b9be9321e9133534e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Project.Features.Weather.Scripts.Installer.WeatherInstaller
+  _weatherView: {fileID: 1312553175}
 --- !u!1 &1751021679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,6 +1921,8 @@ MonoBehaviour:
   - {fileID: 49871014}
   - {fileID: 1402245206}
   - {fileID: 622683963}
+  - {fileID: 1714389256}
+  - {fileID: 1317431536}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -1838,6 +1956,8 @@ Transform:
   - {fileID: 49871013}
   - {fileID: 1402245205}
   - {fileID: 622683962}
+  - {fileID: 1714389255}
+  - {fileID: 1317431535}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1781118550

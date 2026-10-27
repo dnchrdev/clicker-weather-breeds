@@ -7,17 +7,15 @@ namespace _Project.Features.Weather.Scripts.UseCases
 {
     public class WeatherTabState: ITabState
     {
-        private Subject<Unit> _enterEvent = new Subject<Unit>();
-        private Subject<Unit> _exitEvent = new Subject<Unit>();
+        private ReactiveProperty<bool> _isActive = new ReactiveProperty<bool>(false);
         
-        public IObservable<Unit> EnterEvent => _enterEvent;
-        public IObservable<Unit> ExitEvent => _exitEvent;
+        public IObservable<bool> IsActive => _isActive;
         
         public TabType Type => TabType.WEATHER;
         
         public void Enter()
         {
-            _enterEvent.OnNext(Unit.Default);
+            _isActive.Value = true;
         }
 
         public void Tick(float deltaTime)
@@ -27,7 +25,7 @@ namespace _Project.Features.Weather.Scripts.UseCases
 
         public void Exit()
         {
-            _exitEvent.OnNext(Unit.Default);
+            _isActive.Value = false;
         }
     }
 }

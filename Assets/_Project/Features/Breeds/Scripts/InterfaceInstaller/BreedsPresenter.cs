@@ -21,8 +21,15 @@ namespace _Project.Features.Breeds.Scripts.InterfaceInstaller
 
         public void Initialize()
         {
-            _breedsTabState.EnterEvent.Subscribe(_ => OnTabEnter()).AddTo(_disposables);
-            _breedsTabState.ExitEvent.Subscribe(_ => OnTabExit()).AddTo(_disposables);
+            _breedsTabState.IsActive.Subscribe(active => TabReaction(active)).AddTo(_disposables);
+        }
+
+        private void TabReaction(bool isActive)
+        {
+            if(isActive) 
+                OnTabEnter();  
+            else 
+                OnTabExit();
         }
         
         private void OnTabEnter()
