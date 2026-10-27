@@ -1,4 +1,6 @@
-﻿namespace _Project.Core.Scripts.Entities
+﻿using _Project.Core.Scripts.Entities;
+
+namespace _Project.Core.Scripts.UseCases
 {
     public interface ITabState
     {
