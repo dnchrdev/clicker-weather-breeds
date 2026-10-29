@@ -1,8 +1,7 @@
-﻿using _Project.Features.Clicker.Scripts.Infrastructure.RewardPopup;
-using _Project.Features.Clicker.Scripts.InterfaceAdapters.Ports;
+﻿using _Project.Features.Clicker.Scripts.InterfaceAdapters.Ports;
 using UnityEngine;
 
-namespace _Project.Features.Clicker.Scripts.Infrastructure
+namespace _Project.Features.Clicker.Scripts.Infrastructure.RewardPopup
 {
     public class RewardPopupFactory : IRewardPopupFactory
     {
@@ -15,7 +14,7 @@ namespace _Project.Features.Clicker.Scripts.Infrastructure
 
         public IRewardPopup Create(Transform parent)
         {
-            var go = UnityEngine.Object.Instantiate(_prefab, parent);
+            var go = Object.Instantiate(_prefab, parent);
             return go.GetComponent<IRewardPopup>();
         }
     }

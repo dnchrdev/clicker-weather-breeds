@@ -21,7 +21,6 @@ namespace _Project.Features.Clicker.Scripts.Infrastructure.RewardPopup
         private int _reward;
         private TweenCallback _onArrived;
         private TweenCallback _onFinished;
-        private Tween _toWalletTranslationTween;
 
         public IObservable<Unit> Finished => _finished;
         public IObservable<int> Arrived => _arrived;
@@ -73,7 +72,6 @@ namespace _Project.Features.Clicker.Scripts.Infrastructure.RewardPopup
             _sequence?.Kill();
             _finished.OnCompleted();
 
-            // При выгрузке сцены Unity уже уничтожил объект раньше, чем вызвался Dispose.
             if (this != null)
                 Destroy(gameObject);
         }

@@ -1,39 +1,25 @@
-﻿using System;
-using _Project.Features.Clicker.Scripts.InterfaceAdapters.Ports;
-using _Project.Features.Clicker.Scripts.UseCases;
-using UniRx;
-using Zenject;
+﻿using _Project.Features.Clicker.Scripts.InterfaceAdapters.Ports;
+using _Project.Features.Clicker.Scripts.UseCases.Ports;
 
 namespace _Project.Features.Clicker.Scripts.InterfaceAdapters
 {
-    public class RewardPopupPresenter: IInitializable, IDisposable
+    public class RewardPopupPresenter : IRaiseRewardPopup
     {
-        private readonly RewardPopupUseCase _rewardPopupUseCase;
-        private readonly IRewardPopupView  _rewardPopupView;
-        
-        private CompositeDisposable _disposable = new CompositeDisposable();
+        private readonly IRewardPopupView _rewardPopupView;
 
-        public RewardPopupPresenter(RewardPopupUseCase rewardPopupUseCase, IRewardPopupView rewardPopupView)
+        public RewardPopupPresenter(IRewardPopupView rewardPopupView)
         {
-            _rewardPopupUseCase = rewardPopupUseCase;
             _rewardPopupView = rewardPopupView;
         }
-        
-        public void Initialize()
+
+        public void Raise(int reward)
         {
-            _rewardPopupUseCase.RewardPopup
-                .Subscribe(reward => SpawnRewardPopup(reward))
-                .AddTo(_disposable);
+            SpawnRewardPopup(reward);
         }
 
         private void SpawnRewardPopup(int reward)
         {
             _rewardPopupView.SpawnRewardPopup(reward);
-        }
-
-        public void Dispose()
-        {
-         _disposable.Dispose();   
         }
     }
 }

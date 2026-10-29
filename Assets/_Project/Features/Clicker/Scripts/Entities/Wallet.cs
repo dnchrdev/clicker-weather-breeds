@@ -28,12 +28,12 @@ namespace _Project.Features.Clicker.Scripts.Entities
             
         }
 
-        public void EqualizeAmount()
+        public void SyncOuterToInner()
         {
             _outerAmount.Value = _innerAmount;
         }
         
-        public int TapAddReward()
+        public int AddTapReward()
         {
             _innerAmount = Math.Clamp(_innerAmount + _config.TapReward, 0, _config.WalletMax);
             return _config.TapReward;
@@ -44,7 +44,7 @@ namespace _Project.Features.Clicker.Scripts.Entities
             _outerAmount.Value = Math.Clamp(_outerAmount.Value + reward, 0, _innerAmount);
         }
 
-        public int AutoCollectAddReward()
+        public int AddAutoCollectReward()
         {
             _innerAmount = Math.Clamp(_innerAmount + _config.AutoCollectReward, 0, _config.WalletMax);
             return _config.AutoCollectReward;

@@ -15,14 +15,14 @@ MonoBehaviour:
   _energy:
     Max: 1000
     Start: 1000
-    TapCost: 10
-    AutoCollectCost: 10
+    TapCost: 1
+    AutoCollectCost: 1
     RegenAmount: 10
-    RegenIntervalSeconds: 1
+    RegenIntervalSeconds: 10
   _rewards:
     WalletStart: 0
     WalletMax: 1000
     TapReward: 1
-    AutoCollectReward: 5
+    AutoCollectReward: 1
   _autoCollect:
     IntervalSeconds: 3

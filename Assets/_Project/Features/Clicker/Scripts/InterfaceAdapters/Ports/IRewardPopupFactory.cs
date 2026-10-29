@@ -1,10 +1,9 @@
-﻿using _Project.Features.Clicker.Scripts.Infrastructure.RewardPopup;
-using UnityEngine;
+﻿using _Project.Core.Scripts.Infrastructure;
+using _Project.Features.Clicker.Scripts.Infrastructure.RewardPopup;
 
 namespace _Project.Features.Clicker.Scripts.InterfaceAdapters.Ports
 {
-    public interface IRewardPopupFactory
+    public interface IRewardPopupFactory : IPoolFactory<IRewardPopup>
     {
-        public IRewardPopup Create(Transform parent);
     }
 }

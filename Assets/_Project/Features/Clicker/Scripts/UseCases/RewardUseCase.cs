@@ -13,7 +13,7 @@ namespace _Project.Features.Clicker.Scripts.UseCases
 
         public void SyncOuterToInner()
         {
-            _wallet.EqualizeAmount();
+            _wallet.SyncOuterToInner();
         }
         
         public void AddOuterReward(int reward)

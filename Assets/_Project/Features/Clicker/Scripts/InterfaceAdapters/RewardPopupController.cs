@@ -25,7 +25,7 @@ namespace _Project.Features.Clicker.Scripts.InterfaceAdapters
                 .Subscribe(reward => _outerRewardUseCase.AddOuterReward(reward))
                 .AddTo(_disposables);
 
-            _rewardPopupView.AllSettled
+            _rewardPopupView.AllArrived
                 .Subscribe(_ => _outerRewardUseCase.SyncOuterToInner())
                 .AddTo(_disposables);
         }
