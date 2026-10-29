@@ -18,7 +18,7 @@ namespace _Project.Features.Weather.Scripts.UseCases
             _isActive.Value = true;
         }
 
-        public void Tick(float deltaTime)
+        public void Tick(float dt)
         {
             
         }

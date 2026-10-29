@@ -1,5 +1,6 @@
 ﻿using System;
 using _Project.Features.Clicker.Scripts.InterfaceAdapters.Ports;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,12 +10,30 @@ namespace _Project.Features.Clicker.Scripts.Infrastructure
     public class ClickerView: MonoBehaviour, IClickerView
     {
         [SerializeField] private Button _tapButton;
+        [SerializeField] private TMP_Text _wallet;
+        [SerializeField] private TMP_Text _energy;
+        [SerializeField] private Image _energyFill;
         
         private Subject<Unit> _tapClicked = new Subject<Unit>();
         private CompositeDisposable _disposables = new CompositeDisposable();
         
         public IObservable<Unit> TapClicked => _tapClicked;
+
+        public void UpdateWallet(int amount)
+        {
+            _wallet.SetText("{0}", amount);
+        }
+
+        public void UpdateEnergy(int amount)
+        {
+            _energy.SetText("{0}", amount);
+        }
         
+        public void UpdateEnergyFill(float ratio)
+        {
+            _energyFill.fillAmount = ratio;
+        }
+
         public void ShowView()
         {
             gameObject.SetActive(true);

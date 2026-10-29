@@ -2,8 +2,8 @@
 {
     public interface IWeatherView
     {
+        public void UpdateWeather();
         public void ShowView();
-
         public void HideView();
     }
 }
