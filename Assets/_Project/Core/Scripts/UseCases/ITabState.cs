@@ -6,7 +6,7 @@ namespace _Project.Core.Scripts.UseCases
     {
         TabType Type { get; }
         public void Enter();
-        public void Tick(float deltaTime);
+        public void Tick(float dt);
         public void Exit();
     }
 }
