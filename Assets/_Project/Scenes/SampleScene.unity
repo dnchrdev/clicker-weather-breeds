@@ -3155,6 +3155,8 @@ MonoBehaviour:
   _wallet: {fileID: 953814738}
   _energy: {fileID: 63733806}
   _energyFill: {fileID: 948536798}
+  _punchScale: 0.15
+  _punchDuration: 0.2
 --- !u!1 &963562816
 GameObject:
   m_ObjectHideFlags: 0
@@ -6331,7 +6333,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 16
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
