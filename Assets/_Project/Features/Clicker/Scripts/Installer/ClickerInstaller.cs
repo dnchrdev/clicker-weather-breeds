@@ -35,7 +35,6 @@ namespace _Project.Features.Clicker.Scripts.Installer
             Container.BindInterfacesTo<ClickerController>().AsSingle();
             Container.BindInterfacesTo<ClickerPresenter>().AsSingle();
             Container.BindInterfacesTo<RewardPopupController>().AsSingle();
-            Container.BindInterfacesTo<RewardPopupPresenter>().AsSingle();
             
             Container.Bind<IClickerView>().FromInstance(_clickerView).AsSingle();
             Container.Bind<ITapButtonPunch>().FromInstance(_clickerView).AsSingle();

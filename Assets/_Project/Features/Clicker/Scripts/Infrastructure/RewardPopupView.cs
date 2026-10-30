@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using _Project.Core.Scripts.Infrastructure;
 using _Project.Features.Clicker.Scripts.Infrastructure.RewardPopup;
 using _Project.Features.Clicker.Scripts.InterfaceAdapters.Ports;
+using _Project.Features.Clicker.Scripts.UseCases.Ports;
 using UniRx;
 using UnityEngine;
 using Zenject;
 
 namespace _Project.Features.Clicker.Scripts.Infrastructure
 {
-    public class RewardPopupView : MonoBehaviour, IRewardPopupView, IInitializable, IDisposable
+    public class RewardPopupView : MonoBehaviour, IRewardPopupView, IInitializable, IDisposable, IRaiseRewardPopup
     {
         private const int InitialPrewarmCount = 25;
 
@@ -51,7 +52,7 @@ namespace _Project.Features.Clicker.Scripts.Infrastructure
             _pool.Prewarm();
         }
 
-        public void SpawnRewardPopup(int reward)
+        public void ShowRewardPopup(int reward)
         {
             if (!_pool.TryGet(out var popup))
                 return;

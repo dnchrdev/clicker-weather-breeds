@@ -7,7 +7,6 @@ namespace _Project.Features.Clicker.Scripts.InterfaceAdapters.Ports
     {
         public IObservable<int> RewardArrived { get; }
         public IObservable<Unit> AllArrived { get; }
-
-        public void SpawnRewardPopup(int reward);
+        
     }
 }

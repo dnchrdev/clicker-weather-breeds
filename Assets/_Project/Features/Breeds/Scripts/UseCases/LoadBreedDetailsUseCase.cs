@@ -14,7 +14,7 @@ namespace _Project.Features.Breeds.Scripts.UseCases
         private readonly BreedPopupInfo _breedPopupInfo;
         private readonly BreedsLoadState _loadState;
         
-        private CancellationTokenSource _cancellation;
+        private CancellationTokenSource _cts;
 
         public LoadBreedDetailsUseCase(
             IRequestQueue requestQueue,
@@ -39,8 +39,8 @@ namespace _Project.Features.Breeds.Scripts.UseCases
             CancelCurrent();
             _loadState.SetLoadingBreed(breedId);
 
-            _cancellation = new CancellationTokenSource();
-            LoadDetails(breedId, _cancellation.Token).Forget();
+            _cts = new CancellationTokenSource();
+            LoadDetails(breedId, _cts.Token).Forget();
         }
 
         public void Cancel()
@@ -76,12 +76,12 @@ namespace _Project.Features.Breeds.Scripts.UseCases
 
         private void CancelCurrent()
         {
-            if (_cancellation == null)
+            if (_cts == null)
                 return;
 
-            _cancellation.Cancel();
-            _cancellation.Dispose();
-            _cancellation = null;
+            _cts.Cancel();
+            _cts.Dispose();
+            _cts = null;
         }
     }
 }

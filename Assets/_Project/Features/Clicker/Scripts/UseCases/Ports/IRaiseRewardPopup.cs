@@ -2,6 +2,6 @@
 {
     public interface IRaiseRewardPopup
     {
-        public void Raise(int reward);
+        public void ShowRewardPopup(int reward);
     }
 }

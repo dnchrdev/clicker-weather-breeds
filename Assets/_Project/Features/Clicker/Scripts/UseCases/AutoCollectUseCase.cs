@@ -38,7 +38,7 @@ namespace _Project.Features.Clicker.Scripts.UseCases
                 _tapButtonPunch.Punch();
 
                 int reward = _wallet.AddAutoCollectReward();
-                _raiseRewardPopup.Raise(reward);
+                _raiseRewardPopup.ShowRewardPopup(reward);
             }
         }
     }

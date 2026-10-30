@@ -15,7 +15,7 @@ namespace _Project.Features.Weather.Scripts.UseCases
         private readonly WeatherForecast _weatherForecast;
         private readonly IWeatherRefreshTimer _refreshTimer;
         
-        private CancellationTokenSource _cancellation;
+        private CancellationTokenSource _cts;
 
         public LoadWeatherUseCase(
             IRequestQueue requestQueue,
@@ -36,8 +36,8 @@ namespace _Project.Features.Weather.Scripts.UseCases
             CancelCurrent();
             _refreshTimer.RefreshStarted();
 
-            _cancellation = new CancellationTokenSource();
-            Refresh(_cancellation.Token).Forget();
+            _cts = new CancellationTokenSource();
+            Refresh(_cts.Token).Forget();
         }
 
         public void Cancel()
@@ -77,12 +77,12 @@ namespace _Project.Features.Weather.Scripts.UseCases
 
         private void CancelCurrent()
         {
-            if (_cancellation == null)
+            if (_cts == null)
                 return;
 
-            _cancellation.Cancel();
-            _cancellation.Dispose();
-            _cancellation = null;
+            _cts.Cancel();
+            _cts.Dispose();
+            _cts = null;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace _Project.Features.Clicker.Scripts.UseCases
                 _tapSfx.Play();
                 _tapButtonPunch.Punch();
                 int reward = _wallet.AddTapReward();
-                _raiseRewardPopup.Raise(reward);
+                _raiseRewardPopup.ShowRewardPopup(reward);
             }
                 
         }
